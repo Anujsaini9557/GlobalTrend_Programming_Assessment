@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Write a function that checks if two given strings
+    are anagrams opf each other.
+    <div id="demo1"> </div>
+    <div id="demo2"> </div>
+
+    <script>
+     
+    
+
+        function areAnagrams(str1, str2) {
+/ 
+    function cleanString(str) {
+        return str
+            .replace(/[^\w]/g, '')  
+            .toLowerCase()         
+            .split('')              
+            .sort()                
+            .join('');             
+    }
+
+    
+    const cleanedStr1 = cleanString(str1);
+    const cleanedStr2 = cleanString(str2);
+
+    
+    return cleanedStr1 === cleanedStr2;
+}
+
+
+const string1 = "Listen";
+const string2 = "Silent";
+ console.log(areAnagrams(string1, string2)); 
+
+const string3 = "Hello";
+const string4 = "World";
+console.log(areAnagrams(string3, string4));
+
+ 
+    </script>
+</body>
+</html>

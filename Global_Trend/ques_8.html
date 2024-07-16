@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hashmap</title>
+  </head>
+  <body>
+    <!-- Implement a simple HashMap class with put,
+     get and removed methods -->
+
+    <script>
+      class HashMap {
+        constructor() {
+          this.map = {};
+        }
+
+        put(key, value) {
+          this.map[key] = value;
+        }
+
+        get(key) {
+          return this.map.hasOwnProperty(key) ? this.map[key] : undefined;
+        }
+
+        remove(key) {
+          if (this.map.hasOwnProperty(key)) {
+            delete this.map[key];
+          }
+        }
+      }
+
+      const hashMap = new HashMap();
+      hashMap.put("name", "Alice");
+      console.log(hashMap.get("name"));
+      hashMap.remove("name");
+      console.log(hashMap.get("name"));
+    </script>
+  </body>
+</html>

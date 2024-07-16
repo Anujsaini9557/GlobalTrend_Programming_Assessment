@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>converting_array</title>
+</head>
+<body>
+    <!-- Write a function that takes a nested array additionreturns 
+    a flattened array. -->
+    <div id="f_array"></div>
+    <p id="demo"></p>
+    <script>
+        function flattenNestedArray(arr) {
+            let flattenedArray = [];
+
+            arr.forEach(element => {
+                if (Array.isArray(element)) {
+                    flattenedArray = flattenedArray.concat(flattenNestedArray(element));
+                } else {
+                    flattenedArray.push(element);
+                }
+            });
+
+            return flattenedArray;
+        }
+
+        // Example nested array
+        const nestedArray = [['Hello', 'World'], ['JavaScript', ['is', 'awesome']]];
+
+        // Flatten the nested array
+        const flattenedArray = flattenNestedArray(nestedArray);
+
+        // Display the flattened array in the HTML element with the id "demo"
+        document.getElementById("demo").innerHTML = flattenedArray.join(', ');
+
+        // Print the flattened array to the console
+        console.log(flattenedArray);
+        </script>
+</body>
+</html>

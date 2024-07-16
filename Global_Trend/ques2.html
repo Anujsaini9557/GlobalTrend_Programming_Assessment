@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string</title>
+</head>
+<body>
+
+    <!-- write a function that takes a string input representing a simple arithmetic expression
+    (only addition and subraction) and returns the result 
+     -->
+    
+    <div id="exp"></div>
+    <div id="result"></div>
+
+    <script>
+        function evalExpression(expression){
+            return eval(expression);
+        }
+        let expression  = "10 + 5 - 3 + 8 ";
+        document.getElementById("exp").innerHTML = expression ;
+        document.getElementById("result").innerHTML = "Result = " + evalExpression(expression);
+
+
+        
+    </script>
+</body>
+</html>

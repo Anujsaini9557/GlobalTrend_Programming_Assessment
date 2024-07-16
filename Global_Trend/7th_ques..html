@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+   
+ <!-- write the function that generates the first n numbers
+    of the fibonacci sequence. -->
+    <script>
+      function fibonacci(n) {
+        if (n <= 0) {
+          return [];
+        } else if (n === 1) {
+          return [0];
+        } else if (n === 2) {
+          return [0, 1];
+        }
+
+        let fibSequence = [0, 1];
+        while (fibSequence.length < n) {
+          let nextNumber =
+            fibSequence[fibSequence.length - 1] +
+            fibSequence[fibSequence.length - 2];
+          fibSequence.push(nextNumber);
+        }
+
+        return fibSequence;
+      }
+
+      // Example usage:
+      let n = 10;
+      console.log(fibonacci(n));
+    </script>
+  </body>
+</html>
